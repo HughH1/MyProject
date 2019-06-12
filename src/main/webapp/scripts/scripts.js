@@ -23,7 +23,7 @@ let myVal = document.getElementById("theInput");
 
 function search() {
     let value = myVal.value;
-    fetchData(value, "http://localhost:8080/SkateTricks-1.0/api/viewTrick").then((req) => {
+    fetchData(value, "http://35.234.153.117:8080/SkateTricks-1.0/api/viewTrick").then((req) => {
         let tricks = JSON.parse(req.responseText);
         document.getElementById("myOutput").innerHTML = tricks.difficulty;
         console.log(tricks);
