@@ -1,0 +1,40 @@
+
+.myStlye{
+    color: blue;
+
+}
+.hover head{
+color: blue;
+}
+body{
+    color: aqua;
+    margin: auto;
+    width: 80%;
+    padding-top: 1%;
+    padding-left: 5%;
+    text-align: left;
+    background: #191919;
+}
+
+p{
+    color: aqua;
+}
+h1{
+    text-align: left;
+    color : aqua;
+}
+div{
+    padding-left: 1%;
+    border: width 10em border-style solid aqua;
+}
+li {
+  display: block;
+  color: aqua;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+li:hover {
+  background-color: red;
+  color: white;
+}
