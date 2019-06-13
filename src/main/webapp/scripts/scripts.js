@@ -1,5 +1,5 @@
 
-function fetchData(type, id, url) {
+function checkServer(type, id, url) {
     return new Promise((resolve, reject) => {
         const req = new XMLHttpRequest();
         req.onreadystatechange = () => {
@@ -22,37 +22,38 @@ let myVal = document.getElementById("theInput");
 
 function search() {
     let value = myVal.value;
-    fetchData("GET", value, "http://35.234.153.117:8080/SkateTricks-1.0/api/viewTrick").then((req) => {
+    checkServer("GET", value, "http://35.234.153.117:8080/SkateTricks-1.0/api/viewTrick").then((req) => {
         let tricks = JSON.parse(req.responseText);
         document.getElementById("trickName").innerHTML = tricks.trick;
         document.getElementById("trickDesc").innerHTML = tricks.desc;
         document.getElementById("trickProgress").innerHTML = tricks.progress;
         document.getElementById("trickDifficulty").innerHTML = tricks.difficulty;
-        console.log(tricks);
     });
 }
 
-let cVal = document.getElementById("cUserInput");
-cVal += " " + document.getElementById("cUserInput2");
 
 function createTrick() {
+    let theTrick = {
+        trickName: "",
+        desc: "",
+        progress: "",
+        difficulty: "",
+    };
+    
+    theTrick.trickName = document.getElementById("trickName").value;
+    theTrick.desc = document.getElementById("trickDesc").value;
+    theTrick.progress = document.getElementById("trickProgress").value;
+    theTrick.difficulty = document.getElementById("trickDifficulty").value;
 
-    return new Promise((resolve, reject) => {
+    // JSON.stringify(theTrick)
 
-        const req = new XMLHttpRequest();
-        req.onreadystatechange = () => {
-            if (req.readyState === 4) {
-                if (req.status === 201) {
-                    resolve(req);
-                }
-                else {
-                    reject("Create POST method didn't work");
-                }
-            }
-        }
-        req.open("POST", "http://35.234.153.117:8080/SkateTricks-1.0/api/createTrick");
+   checkServer("POST", null, "http://35.234.153.117:8080/SkateTricks-1.0/api/createTrick").then((req) => {
+        
+        // req.open("POST", "http://35.234.153.117:8080/SkateTricks-1.0/api/createTrick");
         req.setRequestHeader("Content-Type", "application/json");
-        req.send(JSON.stringify(cVal));
-        console.log(parse(cVal));
+        req.send(JSON.stringify(theTrick));
+        console.log(parse(theTrick));
     });
 }
+
+

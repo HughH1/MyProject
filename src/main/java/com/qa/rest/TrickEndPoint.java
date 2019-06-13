@@ -28,7 +28,7 @@ public class TrickEndPoint {
 
 	@POST
 	@Produces(MediaType.TEXT_PLAIN)
-	@Path("/createTrick")
+	@Path("/createTrick/")
 	public Response createTrick(Trick trick, @Context UriInfo uriInfo) {
 		trick = trickRepository.createTrick(trick);
 		URI createdURI = uriInfo.getBaseUriBuilder().path("" + trick.getId()).build();
@@ -49,7 +49,7 @@ public class TrickEndPoint {
 	
 	@PUT
 	@Consumes("application/json")
-	@Path("/updateName/{trickName}")
+	@Path("/updateName/{id}")
 	public Response updateName(Trick name, @PathParam("id") int id) {
 		if (trickRepository.findTrick(id).equals(null)) {
 			return Response.status(Status.NOT_FOUND).build();
@@ -93,6 +93,7 @@ public class TrickEndPoint {
 	}
 
 	@DELETE
+	@Path("/delete/{id}")
 	public Response deleteTrick(@PathParam("id") int id) {
 		if (trickRepository.findTrick(id).equals(null)) {
 			return Response.status(Status.NOT_FOUND).build();
