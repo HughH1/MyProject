@@ -38,8 +38,8 @@ function createTrick() {
         const req = new XMLHttpRequest();
         req.open("POST", "http://35.234.153.117:8080/SkateTricks-1.0/api/createTrick");
         req.setRequestHeader("Content-Type", "application/json");
-
         
+
 
     });
     
