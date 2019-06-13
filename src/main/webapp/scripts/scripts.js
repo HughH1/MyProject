@@ -41,12 +41,10 @@ function search() {
 function createTrick() {
     let theTrick = {};
 
-    theTrick.trick = document.getElementById("trickName").value;
-    console.log(document.getElementById("trickName"));
-    console.log(document.getElementById("trickName").value);
-    theTrick.desc = document.getElementById("trickDesc").value;
-    theTrick.progress = document.getElementById("trickProgress").value;
-    theTrick.difficulty = document.getElementById("trickDifficulty").value;
+    theTrick.trick = document.getElementById("cTrickName").value;
+    theTrick.desc = document.getElementById("cTrickDesc").value;
+    theTrick.progress = document.getElementById("cTrickProgress").value;
+    theTrick.difficulty = document.getElementById("cTrickDifficulty").value;
 
     // JSON.stringify(theTrick)
     console.log(theTrick);
