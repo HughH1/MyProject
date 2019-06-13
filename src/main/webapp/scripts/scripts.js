@@ -12,8 +12,7 @@ function fetchData(id, url) {
                 }
             }
         }
-        req.open("GET", url+"/"+id);
-        console.log(id);
+        req.open("GET", url + "/" + id);
         req.send();
     });
 }
@@ -25,10 +24,40 @@ function search() {
     let value = myVal.value;
     fetchData(value, "http://35.234.153.117:8080/SkateTricks-1.0/api/viewTrick").then((req) => {
         let tricks = JSON.parse(req.responseText);
-        document.getElementById("myOutput").innerHTML = tricks.difficulty;
+        document.getElementById("myOutput").innerHTML = tricks.trick;
         console.log(tricks);
     });
 }
+
+
+
+let userInput = document.getElementById("")
+
+function createTrick() {
+    return new Promise((resolve, reject)=>{
+        const req = new XMLHttpRequest();
+        req.open("POST", "http://35.234.153.117:8080/SkateTricks-1.0/api/createTrick");
+        req.setRequestHeader("Content-Type", "application/json");
+
+        
+
+    });
+    
+    
+    //function addAccount() {
+    // let request = new XMLHttpRequest();
+    // request.open("POST", "/JavaEEServer-1.0/api/accounts");
+    // request.setRequestHeader("Content-Type", "application/json")
+    // let body = {name: "Gaza"};
+    // request.send(JSON.stringify(body));
+    
+    
+
+
+
+}
+
+
 
 
 
@@ -41,14 +70,6 @@ function search() {
 
 //     });
 // }
-
-
-
-
-
-
-
-
 
 
 // function sendReq() {
