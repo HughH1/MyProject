@@ -40,7 +40,7 @@ function search() {
 
 function createTrick() {
     let theTrick = {
-        trickName: "",
+        trick: "",
         desc: "",
         progress: "",
         difficulty: "",
