@@ -28,7 +28,7 @@ public class TrickEndPoint {
 
 	@POST
 	@Produces(MediaType.TEXT_PLAIN)
-	@Path("/createTrick/")
+	@Path("/createTrick")
 	public Response createTrick(Trick trick, @Context UriInfo uriInfo) {
 		trick = trickRepository.createTrick(trick);
 		URI createdURI = uriInfo.getBaseUriBuilder().path("" + trick.getId()).build();

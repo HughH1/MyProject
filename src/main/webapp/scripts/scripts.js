@@ -12,7 +12,15 @@ function checkServer(type, id, url) {
                 }
             }
         }
-        req.open(type, url + "/" + id);
+
+        if (type == "DELETE" || type == "GET") {
+            req.open(type, url);
+        }
+        else {
+
+            req.open(type, url + "/" + id);
+        }
+
         req.send();
     });
 }
@@ -39,7 +47,7 @@ function createTrick() {
         progress: "",
         difficulty: "",
     };
-    
+
     theTrick.trickName = document.getElementById("trickName").value;
     theTrick.desc = document.getElementById("trickDesc").value;
     theTrick.progress = document.getElementById("trickProgress").value;
@@ -47,11 +55,8 @@ function createTrick() {
 
     // JSON.stringify(theTrick)
 
-   checkServer("POST", null, "http://35.234.153.117:8080/SkateTricks-1.0/api/createTrick").then((req) => {
-        
-        // req.open("POST", "http://35.234.153.117:8080/SkateTricks-1.0/api/createTrick");
-        req.setRequestHeader("Content-Type", "application/json");
-        req.send(JSON.stringify(theTrick));
+    checkServer("POST", null, "http://35.234.153.117:8080/SkateTricks-1.0/api/createTrick").then((req) => {
+
         console.log(parse(theTrick));
     });
 }
