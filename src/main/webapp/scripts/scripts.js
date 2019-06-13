@@ -45,10 +45,9 @@ function createTrick() {
     theTrick.desc = document.getElementById("cDesc").value;
     theTrick.progress = document.getElementById("cProgress").value;
     theTrick.difficulty = document.getElementById("cDifficulty").value;
-
-    // JSON.stringify(theTrick)
-    console.log(theTrick);
     
+    JSON.stringify(theTrick);
+
     checkServer("POST", null, "http://35.234.153.117:8080/SkateTricks-1.0/api/createTrick").then((req) => {
 
         console.log(theTrick);
