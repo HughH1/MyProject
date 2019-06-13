@@ -18,9 +18,9 @@ function checkServer(type, id, url) {
         }
         else {
             req.open(type, url + "/" + id);
-        }
 
         req.send();
+        }
     });
 }
 
