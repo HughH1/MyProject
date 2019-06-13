@@ -42,9 +42,9 @@ function createTrick() {
     let theTrick = {};
 
     theTrick.trick = document.getElementById("cTrickName").value;
-    theTrick.desc = document.getElementById("cTrickDesc").value;
-    theTrick.progress = document.getElementById("cTrickProgress").value;
-    theTrick.difficulty = document.getElementById("cTrickDifficulty").value;
+    theTrick.desc = document.getElementById("cDesc").value;
+    theTrick.progress = document.getElementById("cProgress").value;
+    theTrick.difficulty = document.getElementById("cDifficulty").value;
 
     // JSON.stringify(theTrick)
     console.log(theTrick);
