@@ -22,6 +22,8 @@ function checkServer(type, id, url, object) {
             req.open(type, url + "/" + id);
             req.send(object);
         }
+    }).catch(error => {
+        console.log(error);
     });
 }
 
