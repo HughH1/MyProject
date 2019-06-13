@@ -6,16 +6,16 @@ import javax.transaction.Transactional;
 import javax.transaction.Transactional.TxType;
 
 import com.qa.model.Trick;
-  
+
 @Transactional(value = TxType.SUPPORTS)
 public class TrickDB implements TrickRepository {
-	
+
 	@PersistenceContext(unitName = "myPU")
 	private EntityManager em;
 
 	@Transactional(value = TxType.REQUIRED)
 	public Trick createTrick(Trick trick) {
-		em.persist(trick); 
+		em.persist(trick);
 		return trick;
 	}
 
@@ -26,15 +26,15 @@ public class TrickDB implements TrickRepository {
 	}
 
 	@Transactional(value = TxType.REQUIRED)
-	public void updateTrick(int id, Trick trick) {
-		trick = em.find(Trick.class, id);
-		trick.setTrick(trick.getTrick());
-		trick.setDesc(trick.getDesc());
-		trick.setProgress(trick.getProgress());
-		trick.setDifficulty(trick.getDifficulty());
+	public Trick updateTrick(int id, Trick newTrick) {
+		Trick trick = em.find(Trick.class, id);
+		trick.setTrick(newTrick.getTrick());
+		trick.setDesc(newTrick.getDesc());
+		trick.setProgress(newTrick.getProgress());
+		trick.setDifficulty(newTrick.getDifficulty());
+		return trick;
 	}
-	
-	
+
 	@Transactional(value = TxType.REQUIRED)
 	public void deleteTrick(int id) {
 		em.remove(findTrick(id));

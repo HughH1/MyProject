@@ -8,7 +8,7 @@ public interface TrickRepository {
 
 	public Trick findTrick(int id);
 
-	public void updateTrick(int id, Trick trick);
+	public Trick updateTrick(int id, Trick trick);
 
 	public void deleteTrick(int id);
 

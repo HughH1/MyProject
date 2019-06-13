@@ -54,8 +54,8 @@ public class TrickEndPoint {
 		if (trickRepository.findTrick(id).equals(null)) {
 			return Response.status(Status.NOT_FOUND).build();
 		}
-		trickRepository.updateTrick(id, trick);
-		return Response.ok().build();
+		Trick newTrick = trickRepository.updateTrick(id, trick);
+		return Response.ok(newTrick).build();
 
 	}
 
