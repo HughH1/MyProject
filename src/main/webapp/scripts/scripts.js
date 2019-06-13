@@ -39,14 +39,11 @@ function search() {
 
 
 function createTrick() {
-    let theTrick = {
-        trick: "",
-        desc: "",
-        progress: "",
-        difficulty: "",
-    };
+    let theTrick = {};
 
     theTrick.trick = document.getElementById("trickName").value;
+    console.log(document.getElementById("trickName"));
+    console.log(document.getElementById("trickName").value);
     theTrick.desc = document.getElementById("trickDesc").value;
     theTrick.progress = document.getElementById("trickProgress").value;
     theTrick.difficulty = document.getElementById("trickDifficulty").value;
