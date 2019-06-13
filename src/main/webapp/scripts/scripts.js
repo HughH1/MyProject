@@ -4,7 +4,7 @@ function checkServer(type, id, url, object) {
         const req = new XMLHttpRequest();
         req.onreadystatechange = () => {
             if (req.readyState === 4) {
-                if (req.status === 200) {
+                if (req.status >= 200 && req.status < 300) {
                     resolve(req);
                 }
                 else {
