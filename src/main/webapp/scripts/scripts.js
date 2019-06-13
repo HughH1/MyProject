@@ -60,4 +60,8 @@ function createTrick() {
     });
 }
 
+function updateTrick() {
+
+}
+
 

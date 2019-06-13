@@ -26,33 +26,15 @@ public class TrickDB implements TrickRepository {
 	}
 
 	@Transactional(value = TxType.REQUIRED)
-	public Trick updateTrickName(int id, Trick name) {
-		Trick trickName = em.find(Trick.class, id);
-		trickName.setTrick(name.getTrick());
-		return trickName;
+	public void updateTrick(int id, Trick trick) {
+		trick = em.find(Trick.class, id);
+		trick.setTrick(trick.getTrick());
+		trick.setDesc(trick.getDesc());
+		trick.setProgress(trick.getProgress());
+		trick.setDifficulty(trick.getDifficulty());
 	}
-
-	@Transactional(value = TxType.REQUIRED)
-	public Trick updateDesc(int id, Trick desc) {
-		Trick trickDesc = em.find(Trick.class, id);
-		trickDesc.setDesc(desc.getDesc());
-		return trickDesc;
-	}
-
-	@Transactional(value = TxType.REQUIRED)
-	public Trick updateProgress(int id, Trick rating) {
-		Trick trickProgress = em.find(Trick.class, id);
-		trickProgress.setProgress(rating.getProgress());
-		return trickProgress;
-	}
-
-	@Transactional(value = TxType.REQUIRED)
-	public Trick updateDifficulty(int id, Trick rating) {
-		Trick trickDifficulty = em.find(Trick.class, id);
-		trickDifficulty.setDifficulty(rating.getDifficulty());
-		return trickDifficulty;
-	}
-
+	
+	
 	@Transactional(value = TxType.REQUIRED)
 	public void deleteTrick(int id) {
 		em.remove(findTrick(id));
