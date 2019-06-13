@@ -27,6 +27,7 @@ public class TrickEndPoint {
 	private TrickRepository trickRepository;
 
 	@POST
+	@Consumes("application/json")
 	@Produces(MediaType.TEXT_PLAIN)
 	@Path("/createTrick")
 	public Response createTrick(Trick trick, @Context UriInfo uriInfo) {

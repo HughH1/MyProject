@@ -24,6 +24,7 @@ function checkServer(type, id, url, object) {
         }
     }).catch(error => {
         console.log(error);
+        //
     });
 }
 
