@@ -13,11 +13,10 @@ function checkServer(type, id, url) {
             }
         }
 
-        if (type == "DELETE" || type == "GET") {
+        if (type == "DELETE" || type == "POST") {
             req.open(type, url);
         }
         else {
-
             req.open(type, url + "/" + id);
         }
 
