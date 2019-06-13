@@ -68,9 +68,9 @@ function updateTrick() {
     let currentDifficulty = document.getElementById("trickDifficulty").value;
 
     let newTrick = document.getElementById("uTrickName").value;
-    let newDesc = document.getElementById("uTrickDesc").value;
-    let newProgress = document.getElementById("uTrickProgress").value;
-    let newDifficulty = document.getElementById("uTrickDifficulty").value;
+    let newDesc = document.getElementById("uDesc").value;
+    let newProgress = document.getElementById("uProgress").value;
+    let newDifficulty = document.getElementById("uDifficulty").value;
 
     if (newTrick != currentTrick && newTrick != null && newTrick != undefined) {
         theTrick.trick = newTrick;
