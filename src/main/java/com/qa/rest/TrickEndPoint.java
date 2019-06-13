@@ -40,7 +40,7 @@ public class TrickEndPoint {
 	@Path("/viewTrick/{id}")
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response getTrick(@PathParam("id") int id) {
-		if (trickRepository.findTrick(id).equals(null)) {
+		if (trickRepository.findTrick(id) == null) {
 			return Response.status(Status.NOT_FOUND).build();
 		}
 		Trick trick = trickRepository.findTrick(id);
