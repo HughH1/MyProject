@@ -26,7 +26,6 @@ function checkServer(type, id, url) {
 
 let myVal = document.getElementById("theInput");
 
-
 function search() {
     let value = myVal.value;
     checkServer("GET", value, "http://35.234.153.117:8080/SkateTricks-1.0/api/viewTrick").then((req) => {
@@ -53,7 +52,8 @@ function createTrick() {
     theTrick.difficulty = document.getElementById("trickDifficulty").value;
 
     // JSON.stringify(theTrick)
-
+    console.log(parse(theTrick));
+    
     checkServer("POST", null, "http://35.234.153.117:8080/SkateTricks-1.0/api/createTrick").then((req) => {
 
         console.log(parse(theTrick));
