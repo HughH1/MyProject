@@ -1,5 +1,5 @@
 
-function checkServer(type, id, url) {
+function checkServer(type, id, url, object) {
     return new Promise((resolve, reject) => {
         const req = new XMLHttpRequest();
         req.onreadystatechange = () => {
@@ -15,11 +15,11 @@ function checkServer(type, id, url) {
 
         if (type == "DELETE" || type == "POST") {
             req.open(type, url);
+            req.send(object);
         }
         else {
             req.open(type, url + "/" + id);
-
-        req.send();
+            req.send(object);
         }
     });
 }
@@ -48,9 +48,7 @@ function createTrick() {
 
     JSON.stringify(theTrick);
 
-    checkServer("POST", null, "http://35.234.153.117:8080/SkateTricks-1.0/api/createTrick").then((req) => {
-        JSON.stringify(theTrick);
-        send(theTrick);
+    checkServer("POST", null, "http://35.234.153.117:8080/SkateTricks-1.0/api/createTrick", JSON.stringify(theTrick)).then((req) => {
 
         console.log(theTrick);
     });
