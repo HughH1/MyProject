@@ -46,17 +46,17 @@ function createTrick() {
         difficulty: "",
     };
 
-    theTrick.trickName = document.getElementById("trickName").value;
+    theTrick.trick = document.getElementById("trickName").value;
     theTrick.desc = document.getElementById("trickDesc").value;
     theTrick.progress = document.getElementById("trickProgress").value;
     theTrick.difficulty = document.getElementById("trickDifficulty").value;
 
     // JSON.stringify(theTrick)
-    console.log(parse(theTrick));
+    console.log(theTrick);
     
     checkServer("POST", null, "http://35.234.153.117:8080/SkateTricks-1.0/api/createTrick").then((req) => {
 
-        console.log(parse(theTrick));
+        console.log(theTrick);
     });
 }
 
