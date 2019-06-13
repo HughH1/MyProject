@@ -22,9 +22,6 @@ function checkServer(type, id, url, object) {
             req.open(type, url + "/" + id);
             req.send(object);
         }
-    }).catch(error => {
-        console.log(error);
-        //
     });
 }
 
@@ -61,6 +58,47 @@ function createTrick() {
 }
 
 function updateTrick() {
+    let id = myVal;
+
+    let theTrick = {};
+
+    let currentTrick = document.getElementById("trickName").value;
+    let currentDesc = document.getElementById("trickDesc").value;
+    let currentProgress = document.getElementById("trickProgress").value;
+    let currentDifficulty = document.getElementById("trickDifficulty").value;
+
+    let newTrick = document.getElementById("uTrickName").value;
+    let newDesc = document.getElementById("uTrickDesc").value;
+    let newProgress = document.getElementById("uTrickProgress").value;
+    let newDifficulty = document.getElementById("uTrickDifficulty").value;
+
+    if (newTrick != currentTrick && newTrick != null && newTrick != undefined) {
+        theTrick.trick = newTrick;
+    }
+    else {
+        theTrick.trick = currentTrick;
+    }
+    if (newDesc != currentDesc && newDesc != null && newDesc != undefined) {
+        theTrick.desc = newDesc;
+    } else {
+        theTrick.desc = currentDesc;
+    }
+    if (newProgress != currentProgress && newProgress != null && newProgress != undefined) {
+        theTrick.progress = newProgress
+    } else {
+        theTrick.progress = currentProgress
+    }
+    if (newDifficulty != currentDifficulty && newDifficulty != null && newDifficulty != undefined) {
+        theTrick.difficulty = newDifficulty;
+    } else {
+        theTrick.difficulty = currentDifficulty;
+    }
+
+    console.log(theTrick);
+
+    // checkServer("PUT", id, "http://35.234.153.117:8080/SkateTricks-1.0/api/updateTrick", JSON.stringify(theTrick)).then((req) => {
+    //     console.log("updated");
+    // });
 
 }
 
