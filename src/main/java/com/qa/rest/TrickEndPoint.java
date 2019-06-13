@@ -1,5 +1,5 @@
 package com.qa.rest;
- 
+
 import java.net.URI;
 
 import javax.inject.Inject;
@@ -22,7 +22,7 @@ import com.qa.repository.TrickRepository;
 
 @Path("/")
 public class TrickEndPoint {
- 
+
 	@Inject
 	private TrickRepository trickRepository;
 
@@ -40,14 +40,13 @@ public class TrickEndPoint {
 	@Path("/viewTrick/{id}")
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response getTrick(@PathParam("id") int id) {
-		if (trickRepository.findTrick(id) == null) {
+		Trick trick = trickRepository.findTrick(id);
+		if (trick == null) {
 			return Response.status(Status.NOT_FOUND).build();
 		}
-		Trick trick = trickRepository.findTrick(id);
 		return Response.ok(trick).build();
 	}
 
-	
 	@PUT
 	@Consumes("application/json")
 	@Path("/updateName/{id}")
