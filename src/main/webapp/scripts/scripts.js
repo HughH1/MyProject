@@ -41,5 +41,6 @@ function createTrick() {
         req.open("POST", "http://35.234.153.117:8080/SkateTricks-1.0/api/createTrick");
         req.setRequestHeader("Content-Type", "application/json");
         req.send(JSON.stringify(cVal));
+        console.log("cVal");
     });
 }
