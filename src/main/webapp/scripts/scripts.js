@@ -20,6 +20,7 @@ function checkServer(type, id, url, object) {
         }
         else {
             req.open(type, url + "/" + id);
+            req.setRequestHeader("Content-Type", "application/json");
             req.send(object);
         }
     });
