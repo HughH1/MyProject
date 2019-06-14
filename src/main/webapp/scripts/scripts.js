@@ -13,7 +13,7 @@ function checkServer(type, id, url, object) {
             }
         }
 
-        if (type == "POST") {
+        if (type === "POST") {
             req.open(type, url);
             req.setRequestHeader("Content-Type", "application/json");
             req.send(object);
@@ -44,7 +44,7 @@ function search() {
 
 
 function createTrick() {
-    let createdTrick= {};
+    let createdTrick = {};
 
     createdTrick
         .trick = document.getElementById("cTrickName").value;
@@ -57,17 +57,16 @@ function createTrick() {
 
     JSON.stringify(createdTrick);
 
-    checkServer("POST", null, "http://35.234.153.117:8080/SkateTricks-1.0/api/createTrick", JSON.stringify(createdTrick
-    )).then((req) => {
+    checkServer("POST", null, "http://35.234.153.117:8080/SkateTricks-1.0/api/createTrick", JSON.stringify(createdTrick)).then((req) => {
 
         console.log(createdTrick
         );
     });
-} 
- 
+}
+
 
 function updateTrick() {
-    let id = myVal;
+    let id = myVal.value;
 
     let updatedTrick = {};
 
@@ -93,43 +92,43 @@ function updateTrick() {
 
 
     if (newTrick != currentTrick && newTrick != "" && newTrick != undefined) {
-        updatedTrick.trick = newTrick; 
+        updatedTrick.trick = newTrick;
         console.log(updatedTrick);
     } else {
         updatedTrick.trick = currentTrick;
-         console.log(updatedTrick);
+        console.log(updatedTrick);
     }
 
     if (newDesc != currentDesc && newDesc != "" && newDesc != undefined) {
         updatedTrick.desc = newDesc;
-         console.log(updatedTrick);
+        console.log(updatedTrick);
     } else {
         updatedTrick.desc = currentDesc;
-         console.log(updatedTrick);
+        console.log(updatedTrick);
     }
 
     if (newProgress != currentProgress && newProgress != "" && newProgress != undefined) {
         updatedTrick.progress = newProgress
-         console.log(updatedTrick);
+        console.log(updatedTrick);
     } else {
         updatedTrick.progress = currentProgress
-         console.log(updatedTrick);
+        console.log(updatedTrick);
     }
 
     if (newDifficulty != currentDifficulty && newDifficulty != "" && newDifficulty != undefined) {
         updatedTrick.difficulty = newDifficulty;
-         console.log(updatedTrick);
+        console.log(updatedTrick);
     } else {
         updatedTrick.difficulty = currentDifficulty;
-         console.log(updatedTrick);
+        console.log(updatedTrick);
     }
 
     console.log(updatedTrick);
 
     checkServer("PUT", id, "http://35.234.153.117:8080/SkateTricks-1.0/api/updateTrick",
-         JSON.stringify(updatedTrick)).then((req) => {
+        JSON.stringify(updatedTrick)).then((req) => {
             console.log("updated");
-             console.log(updatedTrick);
+            console.log(updatedTrick);
         });
 
 }
