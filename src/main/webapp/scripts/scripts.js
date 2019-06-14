@@ -63,17 +63,18 @@ function createTrick() {
         console.log(updatedTrick
         );
     });
-}
+} 
  
+
 function updateTrick() {
     let id = myVal;
 
     let updatedTrick = {};
 
-    let currentTrick = document.getElementById("trickName").innerHTML;
-    let currentDesc = (document.getElementById("trickDesc")).innerHTML;
-    let currentProgress = (document.getElementById("trickProgress")).innerHTML;
-    let currentDifficulty = (document.getElementById("trickDifficulty")).innerHTML;
+    let currentTrick = document.getElementById("trickName").innerText;
+    let currentDesc = (document.getElementById("trickDesc")).innerText;
+    let currentProgress = (document.getElementById("trickProgress")).innerText;
+    let currentDifficulty = (document.getElementById("trickDifficulty")).innerText;
 
     console.log(currentTrick);
     console.log(currentDesc);
