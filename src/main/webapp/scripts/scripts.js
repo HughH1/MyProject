@@ -17,6 +17,10 @@ function checkServer(type, id, url, object) {
             req.open(type, url);
             req.setRequestHeader("Content-Type", "application/json");
             req.send(object);
+        } else if (type == "DELETE") {
+            req.open(type, url + "/" + id);
+            req.setRequestHeader("Content-Type", "application/json");
+            req.send();
         }
         else {
             console.log(object);
@@ -102,7 +106,7 @@ function updateTrick() {
 
 function deleteTrick() {
     let id = myVal.value;
-    checkServer("DELETE", id, "http://35.234.153.117:8080/SkateTricks-1.0/api/delete/").then((req) => {
+    checkServer("DELETE", id, "http://35.234.153.117:8080/SkateTricks-1.0/api/delete").then((req) => {
         console.log("Trick deleted!");
     });
 }
