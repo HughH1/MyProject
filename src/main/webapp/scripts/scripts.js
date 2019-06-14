@@ -70,16 +70,15 @@ function updateTrick() {
 
     let updatedTrick = {};
 
-    let currentTrick = parse(document.getElementById("trickName").value);
-    let currentDesc = document.getElementById("trickDesc").value;
-    let currentProgress = document.getElementById("trickProgress").value;
-    let currentDifficulty = document.getElementById("trickDifficulty").value;
+    let currentTrick = (document.getElementById("trickName")).innerHTML;
+    let currentDesc = (document.getElementById("trickDesc")).innerHTML;
+    let currentProgress = (document.getElementById("trickProgress")).innerHTML;
+    let currentDifficulty = (document.getElementById("trickDifficulty")).innerHTML;
 
     console.log(currentTrick);
     console.log(currentDesc);
     console.log(currentProgress);
     console.log(currentDifficulty);
-
 
     let newTrick = document.getElementById("uTrickName").value;
     let newDesc = document.getElementById("uDesc").value;
@@ -100,6 +99,7 @@ function updateTrick() {
         updatedTrick
             .trick = currentTrick;
     }
+
     if (newDesc != currentDesc && newDesc != null && newDesc != undefined) {
         updatedTrick
             .desc = newDesc;
@@ -107,6 +107,7 @@ function updateTrick() {
         updatedTrick
             .desc = currentDesc;
     }
+
     if (newProgress != currentProgress && newProgress != null && newProgress != undefined) {
         updatedTrick
             .progress = newProgress
@@ -114,6 +115,7 @@ function updateTrick() {
         updatedTrick
             .progress = currentProgress
     }
+
     if (newDifficulty != currentDifficulty && newDifficulty != null && newDifficulty != undefined) {
         updatedTrick
             .difficulty = newDifficulty;
