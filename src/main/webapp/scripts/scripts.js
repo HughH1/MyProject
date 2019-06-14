@@ -67,7 +67,6 @@ function createTrick() {
 
 function updateTrick() {
     let id = myVal.value;
-    console.log(id);
 
     let updatedTrick = {};
 
@@ -76,21 +75,10 @@ function updateTrick() {
     let currentProgress = (document.getElementById("trickProgress")).innerText;
     let currentDifficulty = (document.getElementById("trickDifficulty")).innerText;
 
-    console.log(currentTrick);
-    console.log(currentDesc);
-    console.log(currentProgress);
-    console.log(currentDifficulty);
-
     let newTrick = document.getElementById("uTrickName").value;
     let newDesc = document.getElementById("uDesc").value;
     let newProgress = document.getElementById("uProgress").value;
     let newDifficulty = document.getElementById("uDifficulty").value;
-
-    console.log(newTrick);
-    console.log(newDesc);
-    console.log(newProgress);
-    console.log(newDifficulty);
-
 
     if (newTrick != currentTrick && newTrick != "" && newTrick != undefined) {
         updatedTrick.trick = newTrick;
@@ -129,7 +117,6 @@ function updateTrick() {
     checkServer("PUT", id, "http://35.234.153.117:8080/SkateTricks-1.0/api/updateTrick",
         JSON.stringify(updatedTrick)).then((req) => {
             console.log("updated");
-            console.log(updatedTrick);
         });
 
 }
