@@ -37,6 +37,11 @@ function search() {
         document.getElementById("trickDesc").innerHTML = tricks.desc;
         document.getElementById("trickProgress").innerHTML = tricks.progress;
         document.getElementById("trickDifficulty").innerHTML = tricks.difficulty;
+
+        document.getElementById("uTrickName").value = tricks.trick;
+        document.getElementById("uDesc").value = tricks.desc;
+        document.getElementById("uProgress").value = tricks.progress;
+        document.getElementById("uDifficulty").value = tricks.difficulty;
     }).catch(error => {
         console.log(error);
     });
@@ -55,7 +60,7 @@ function createTrick() {
     createdTrick
         .difficulty = document.getElementById("cDifficulty").value;
 
-        
+
 
     JSON.stringify(createdTrick);
 
@@ -66,7 +71,7 @@ function createTrick() {
     });
 }
 
- 
+
 function updateTrick() {
     let id = myVal.value;
 
