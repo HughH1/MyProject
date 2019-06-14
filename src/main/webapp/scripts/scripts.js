@@ -107,8 +107,8 @@ function updateTrick() {
 
 function deleteTrick() {
     let id = JSON.parse(sessionStorage.getItem("tricks"));
-    id = id[0];
-    checkServer("DELETE", id.id, "http://35.234.153.117:8080/SkateTricks-1.0/api/delete").then((req) => {
+    trickId = id[0];
+    checkServer("DELETE", trickId.id, "http://35.234.153.117:8080/SkateTricks-1.0/api/delete").then((req) => {
         console.log("Trick deleted!");
     });
 }
