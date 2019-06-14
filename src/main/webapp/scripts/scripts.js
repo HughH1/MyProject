@@ -71,8 +71,6 @@ function createTrick() {
 function updateTrick() {
     let id = myVal.value;
 
-    let updatedTrick = {};
-
     let currentTrick = document.getElementById("trickName").innerText;
     let currentDesc = (document.getElementById("trickDesc")).innerText;
     let currentProgress = (document.getElementById("trickProgress")).innerText;
