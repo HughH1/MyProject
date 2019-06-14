@@ -74,24 +74,21 @@ function updateTrick() {
     let currentProgress = (document.getElementById("trickProgress")).innerText;
     let currentDifficulty = (document.getElementById("trickDifficulty")).innerText;
 
-    document.getElementById("uTrickName").value = document.getElementById("trickName").innerText;
-    document.getElementById("uDesc").value = document.getElementById("trickDesc").innerText;
-    document.getElementById("uProgress").value = document.getElementById("trickProgress").innerText;
-    document.getElementById("uDifficulty").value = document.getElementById("trickDifficulty").innerText;
-
+    document.getElementById("uTrickName").value = currentTrick;
+    document.getElementById("uDesc").value = currentDesc;
+    document.getElementById("uProgress").value = currentProgress;
+    document.getElementById("uDifficulty").value = currentDifficulty;
 
     let newTrick = document.getElementById("uTrickName").value;
     let newDesc = document.getElementById("uDesc").value;
     let newProgress = document.getElementById("uProgress").value;
     let newDifficulty = document.getElementById("uDifficulty").value;
 
-
     const updatedTrick = {
         trick: (newTrick && newTrick != currentTrick) ? newTrick : currentTrick,
         desc: (newDesc && newDesc != currentDesc) ? newDesc : currentDesc,
         progress: (newProgress && newProgress != currentProgress) ? newProgress : currentProgress,
         difficulty: (newDifficulty && newDifficulty != currentDifficulty) ? newDifficulty : currentDifficulty,
-
     };
 
     // updatedTrick.desc = (newDesc && newDesc != currentDesc) ? newDesc : currentDesc;
@@ -133,7 +130,6 @@ function updateTrick() {
 function deleteTrick() {
     let id = myVal.value;
     checkServer("DELETE", id, "http://35.234.153.117:8080/SkateTricks-1.0/api/delete/").then((req) => {
-        req.setRequestHeader("Content-Type", "application/json");
-        req.send();
+        console.log("Trick deleted!");
     });
 }
