@@ -99,7 +99,7 @@ function updateTrick() {
 
     console.log(updatedTrick);
 
-    checkServer("PUT", trickId, "http://35.234.153.117:8080/SkateTricks-1.0/api/updateTrick",
+    checkServer("PUT", trickId.id, "http://35.234.153.117:8080/SkateTricks-1.0/api/updateTrick",
         JSON.stringify(updatedTrick)).then((req) => {
             console.log("updated");
         });
