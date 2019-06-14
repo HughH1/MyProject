@@ -46,7 +46,7 @@ public class TrickEndPoint {
 		}
 		return Response.ok(trick).build();
 	}
-	
+
 	@PUT
 	@Consumes("application/json")
 	@Path("/updateTrick/{id}")
