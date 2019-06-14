@@ -38,7 +38,11 @@ function search() {
         document.getElementById("trickProgress").innerHTML = tricks.progress;
         document.getElementById("trickDifficulty").innerHTML = tricks.difficulty;
 
-        
+        document.getElementById("uTrickName").value = tricks.trick;
+        document.getElementById("uDesc").value = tricks.desc;
+        document.getElementById("uProgress").value = tricks.progress;
+        document.getElementById("uDifficulty").value = tricks.difficulty;
+
     }).catch(error => {
         console.log(error);
     });
@@ -76,10 +80,7 @@ function updateTrick() {
     let currentProgress = (document.getElementById("trickProgress")).innerText;
     let currentDifficulty = (document.getElementById("trickDifficulty")).innerText;
 
-    document.getElementById("uTrickName").value = currentTrick;
-    document.getElementById("uDesc").value = currentDesc;
-    document.getElementById("uProgress").value = currentProgress;
-    document.getElementById("uDifficulty").value = currentDifficulty;
+
 
     let newTrick = document.getElementById("uTrickName").value;
     let newDesc = document.getElementById("uDesc").value;
