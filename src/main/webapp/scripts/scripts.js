@@ -43,25 +43,23 @@ function search() {
 
 
 function createTrick() {
-    let updatedTrick
-        = {};
+    let createdTrick= {};
 
-    updatedTrick
+    createdTrick
         .trick = document.getElementById("cTrickName").value;
-    updatedTrick
+    createdTrick
         .desc = document.getElementById("cDesc").value;
-    updatedTrick
+    createdTrick
         .progress = document.getElementById("cProgress").value;
-    updatedTrick
+    createdTrick
         .difficulty = document.getElementById("cDifficulty").value;
 
-    JSON.stringify(updatedTrick
-    );
+    JSON.stringify(createdTrick);
 
-    checkServer("POST", null, "http://35.234.153.117:8080/SkateTricks-1.0/api/createTrick", JSON.stringify(updatedTrick
+    checkServer("POST", null, "http://35.234.153.117:8080/SkateTricks-1.0/api/createTrick", JSON.stringify(createdTrick
     )).then((req) => {
 
-        console.log(updatedTrick
+        console.log(createdTrick
         );
     });
 } 
@@ -123,10 +121,9 @@ function updateTrick() {
     }
 
     console.log(updatedTrick);
-    JSON.stringify(updatedTrick);
 
     checkServer("PUT", id, "http://35.234.153.117:8080/SkateTricks-1.0/api/updateTrick",
-        updatedTrick).then((req) => {
+         JSON.stringify(updatedTrick)).then((req) => {
             console.log("updated");
         });
 
