@@ -19,6 +19,7 @@ function checkServer(type, id, url, object) {
             req.send(object);
         }
         else {
+            console.log(object);
             req.open(type, url + "/" + id);
             req.setRequestHeader("Content-Type", "application/json");
             req.send(object);
@@ -92,27 +93,35 @@ function updateTrick() {
 
 
     if (newTrick != currentTrick && newTrick != "" && newTrick != undefined) {
-        updatedTrick.trick = newTrick;
+        updatedTrick.trick = newTrick; 
+        console.log(updatedTrick);
     } else {
         updatedTrick.trick = currentTrick;
+         console.log(updatedTrick);
     }
 
     if (newDesc != currentDesc && newDesc != "" && newDesc != undefined) {
         updatedTrick.desc = newDesc;
+         console.log(updatedTrick);
     } else {
         updatedTrick.desc = currentDesc;
+         console.log(updatedTrick);
     }
 
     if (newProgress != currentProgress && newProgress != "" && newProgress != undefined) {
         updatedTrick.progress = newProgress
+         console.log(updatedTrick);
     } else {
         updatedTrick.progress = currentProgress
+         console.log(updatedTrick);
     }
 
     if (newDifficulty != currentDifficulty && newDifficulty != "" && newDifficulty != undefined) {
         updatedTrick.difficulty = newDifficulty;
+         console.log(updatedTrick);
     } else {
         updatedTrick.difficulty = currentDifficulty;
+         console.log(updatedTrick);
     }
 
     console.log(updatedTrick);
@@ -120,8 +129,8 @@ function updateTrick() {
     checkServer("PUT", id, "http://35.234.153.117:8080/SkateTricks-1.0/api/updateTrick",
          JSON.stringify(updatedTrick)).then((req) => {
             console.log("updated");
+             console.log(updatedTrick);
         });
 
 }
-
 
