@@ -70,7 +70,7 @@ function updateTrick() {
 
     let updatedTrick = {};
 
-    let currentTrick = (document.getElementById("trickName")).innerHTML;
+    let currentTrick = document.getElementById("trickName").innerHTML;
     let currentDesc = (document.getElementById("trickDesc")).innerHTML;
     let currentProgress = (document.getElementById("trickProgress")).innerHTML;
     let currentDifficulty = (document.getElementById("trickDifficulty")).innerHTML;
