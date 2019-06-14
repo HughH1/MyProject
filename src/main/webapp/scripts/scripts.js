@@ -66,7 +66,7 @@ function createTrick() {
 
     JSON.stringify(createdTrick);
 
-    checkServer("POST", id, "http://35.234.153.117:8080/SkateTricks-1.0/api/createTrick", JSON.stringify(createdTrick)).then((req) => {
+    checkServer("POST", null, "http://35.234.153.117:8080/SkateTricks-1.0/api/createTrick", JSON.stringify(createdTrick)).then((req) => {
 
         console.log(createdTrick).catch((error) => console.log(error));
     });
@@ -77,7 +77,8 @@ function createTrick() {
 
 
 function updateTrick() {
-    let id = myVal.value;
+   let id = JSON.parse(sessionStorage.getItem("tricks"));
+    trickId = id[0];
 
     let currentTrick = document.getElementById("trickName").innerText;
     let currentDesc = (document.getElementById("trickDesc")).innerText;
@@ -98,7 +99,7 @@ function updateTrick() {
 
     console.log(updatedTrick);
 
-    checkServer("PUT", id, "http://35.234.153.117:8080/SkateTricks-1.0/api/updateTrick",
+    checkServer("PUT", trickId, "http://35.234.153.117:8080/SkateTricks-1.0/api/updateTrick",
         JSON.stringify(updatedTrick)).then((req) => {
             console.log("updated");
         });
