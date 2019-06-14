@@ -73,7 +73,7 @@ function updateTrick() {
 
     let updatedTrick = {};
 
-   let currentTrick = document.getElementById("trickName").innerText;
+    let currentTrick = document.getElementById("trickName").innerText;
     let currentDesc = (document.getElementById("trickDesc")).innerText;
     let currentProgress = (document.getElementById("trickProgress")).innerText;
     let currentDifficulty = (document.getElementById("trickDifficulty")).innerText;
@@ -96,4 +96,6 @@ function updateTrick() {
         JSON.stringify(updatedTrick)).then((req) => {
             console.log("updated");
         });
+
+    search();
 }
