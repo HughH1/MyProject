@@ -9,11 +9,9 @@ function checkServer(type, id, url, object) {
                 }
                 else {
                     reject("Something went wrong");
-                    
                 }
             }
         }
-
         if (type === "POST") {
             req.open(type, url);
             req.setRequestHeader("Content-Type", "application/json");
@@ -34,9 +32,7 @@ function checkServer(type, id, url, object) {
 let myVal = document.getElementById("theInput");
 
 function search() {
-
     let value = myVal.value;
-
     checkServer("GET", value, "http://35.234.153.117:8080/SkateTricks-1.0/api/viewTrickName").then((req) => {
         let tricks = JSON.parse(req.responseText);
         tricks = tricks[0]
@@ -51,8 +47,6 @@ function search() {
         document.getElementById("uProgress").value = tricks.progress;
         document.getElementById("uDifficulty").value = tricks.difficulty;
 
-    }).catch(error => {
-        console.log(error);
     });
 }
 
@@ -68,8 +62,8 @@ function createTrick() {
     JSON.stringify(createdTrick);
 
     checkServer("POST", null, "http://35.234.153.117:8080/SkateTricks-1.0/api/createTrick", JSON.stringify(createdTrick)).then((req) => {
-        let theVal = "Trick has been created";
-        document.getElementById("createConfirmed").innerHTML = theVal;
+        window.alert("Trick has been created");
+
     });
 }
 
@@ -105,9 +99,9 @@ function updateTrick() {
             console.log("updated");
 
         });
-        
-        let theVal = "Trick has been updated";
-        document.getElementById("updatedConfirmed").innerHTML = theVal;
+
+    window.alert("Trick has been updated");
+
 
 }
 
@@ -116,7 +110,7 @@ function deleteTrick() {
     trickId = id[0];
     checkServer("DELETE", trickId.id, "http://35.234.153.117:8080/SkateTricks-1.0/api/delete").then((req) => {
         console.log("Trick deleted!");
-        let theVal = "Trick has been deleted";
-        document.getElementById("deleteConfirmed").innerHTML = theVal;
+        window.alert("Trick has been deleted");
+
     });
 }
