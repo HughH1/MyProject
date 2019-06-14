@@ -17,7 +17,7 @@ function checkServer(type, id, url, object) {
             req.open(type, url);
             req.setRequestHeader("Content-Type", "application/json");
             req.send(object);
-        } else if (type == "DELETE") {
+        } else if (type === "DELETE") {
             req.open(type, url + "/" + id);
             req.setRequestHeader("Content-Type", "application/json");
             req.send();

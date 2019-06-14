@@ -19,7 +19,6 @@ public class TrickDB implements TrickRepository {
 		return trick;
 	}
 
-	@Transactional(value = TxType.REQUIRED)
 	public Trick findTrick(int id) {
 		Trick trick = em.find(Trick.class, id);
 		return trick;
