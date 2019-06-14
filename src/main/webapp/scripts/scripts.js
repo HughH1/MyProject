@@ -42,30 +42,44 @@ function search() {
 
 
 function createTrick() {
-    let theTrick = {};
+    let updatedTrick
+        = {};
 
-    theTrick.trick = document.getElementById("cTrickName").value;
-    theTrick.desc = document.getElementById("cDesc").value;
-    theTrick.progress = document.getElementById("cProgress").value;
-    theTrick.difficulty = document.getElementById("cDifficulty").value;
+    updatedTrick
+        .trick = document.getElementById("cTrickName").value;
+    updatedTrick
+        .desc = document.getElementById("cDesc").value;
+    updatedTrick
+        .progress = document.getElementById("cProgress").value;
+    updatedTrick
+        .difficulty = document.getElementById("cDifficulty").value;
 
-    JSON.stringify(theTrick);
+    JSON.stringify(updatedTrick
+    );
 
-    checkServer("POST", null, "http://35.234.153.117:8080/SkateTricks-1.0/api/createTrick", JSON.stringify(theTrick)).then((req) => {
+    checkServer("POST", null, "http://35.234.153.117:8080/SkateTricks-1.0/api/createTrick", JSON.stringify(updatedTrick
+    )).then((req) => {
 
-        console.log(theTrick);
+        console.log(updatedTrick
+        );
     });
 }
 
 function updateTrick() {
     let id = myVal;
 
-    let theTrick = {};
+    let updatedTrick = {};
 
     let currentTrick = document.getElementById("trickName").value;
     let currentDesc = document.getElementById("trickDesc").value;
     let currentProgress = document.getElementById("trickProgress").value;
     let currentDifficulty = document.getElementById("trickDifficulty").value;
+
+    console.log(currentTrick);
+    console.log(currentDesc);
+    console.log(currentProgress);
+    console.log(currentDifficulty);
+
 
     let newTrick = document.getElementById("uTrickName").value;
     let newDesc = document.getElementById("uDesc").value;
@@ -73,32 +87,40 @@ function updateTrick() {
     let newDifficulty = document.getElementById("uDifficulty").value;
 
     if (newTrick != currentTrick && newTrick != null && newTrick != undefined) {
-        theTrick.trick = newTrick;
-    }
-    else {
-        theTrick.trick = currentTrick;
+        updatedTrick
+            .trick = newTrick;
+    } else {
+        updatedTrick
+            .trick = currentTrick;
     }
     if (newDesc != currentDesc && newDesc != null && newDesc != undefined) {
-        theTrick.desc = newDesc;
+        updatedTrick
+            .desc = newDesc;
     } else {
-        theTrick.desc = currentDesc;
+        updatedTrick
+            .desc = currentDesc;
     }
     if (newProgress != currentProgress && newProgress != null && newProgress != undefined) {
-        theTrick.progress = newProgress
+        updatedTrick
+            .progress = newProgress
     } else {
-        theTrick.progress = currentProgress
+        updatedTrick
+            .progress = currentProgress
     }
     if (newDifficulty != currentDifficulty && newDifficulty != null && newDifficulty != undefined) {
-        theTrick.difficulty = newDifficulty;
+        updatedTrick
+            .difficulty = newDifficulty;
     } else {
-        theTrick.difficulty = currentDifficulty;
+        updatedTrick
+            .difficulty = currentDifficulty;
     }
 
-    console.log(theTrick);
+    console.log(updatedTrick);
 
-    checkServer("PUT", id, "http://35.234.153.117:8080/SkateTricks-1.0/api/updateTrick", JSON.stringify(theTrick)).then((req) => {
-        console.log("updated");
-    });
+    checkServer("PUT", id, "http://35.234.153.117:8080/SkateTricks-1.0/api/updateTrick",
+        JSON.stringify(updatedTrick)).then((req) => {
+            console.log("updated");
+        });
 
 }
 
