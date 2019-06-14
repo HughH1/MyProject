@@ -96,9 +96,9 @@ function updateTrick() {
 
     console.log(theTrick);
 
-    // checkServer("PUT", id, "http://35.234.153.117:8080/SkateTricks-1.0/api/updateTrick", JSON.stringify(theTrick)).then((req) => {
-    //     console.log("updated");
-    // });
+    checkServer("PUT", id, "http://35.234.153.117:8080/SkateTricks-1.0/api/updateTrick", JSON.stringify(theTrick)).then((req) => {
+        console.log("updated");
+    });
 
 }
 
