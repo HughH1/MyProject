@@ -88,6 +88,10 @@ function updateTrick() {
     let newDifficulty = document.getElementById("uDifficulty").value;
 
 
+    if(newTrick == null){
+        console.log("new trick is null!!");
+    }
+
     console.log(newTrick);
     console.log(newDesc);
     console.log(newProgress);
