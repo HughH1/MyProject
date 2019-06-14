@@ -59,8 +59,7 @@ function createTrick() {
 
     checkServer("POST", null, "http://35.234.153.117:8080/SkateTricks-1.0/api/createTrick", JSON.stringify(createdTrick)).then((req) => {
 
-        console.log(createdTrick
-        );
+        console.log(createdTrick);
     });
 }
 
@@ -121,3 +120,11 @@ function updateTrick() {
 
 }
 
+
+function deleteTrick(){
+    let id = myVal.value;
+    checkServer("DELETE", id, "http://35.234.153.117:8080/SkateTricks-1.0/api/delete/" ).then((req) => {
+       req.setRequestHeader("Content-Type", "application/json");
+       req.send();
+    });
+}
