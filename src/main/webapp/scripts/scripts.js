@@ -1,5 +1,8 @@
 
 function checkServer(type, id, url, object) {
+    document.getElementById("deleteConfirmed").innerHTML = "";
+    document.getElementById("updateConfirmed").innerHTML = "";
+    document.getElementById("createConfirmed").innerHTML = "";
     return new Promise((resolve, reject) => {
         const req = new XMLHttpRequest();
         req.onreadystatechange = () => {
