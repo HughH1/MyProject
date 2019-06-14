@@ -102,7 +102,7 @@ function updateTrick() {
 
     if (newDesc != currentDesc && newDesc != null && newDesc != undefined) {
         updatedTrick.desc = newDesc;
-    } else {
+    } else if(newDesc != null) {
         updatedTrick.desc = currentDesc;
     }
 
