@@ -123,9 +123,10 @@ function updateTrick() {
     }
 
     console.log(updatedTrick);
+    JSON.stringify(updatedTrick);
 
     checkServer("PUT", id, "http://35.234.153.117:8080/SkateTricks-1.0/api/updateTrick",
-        JSON.stringify(updatedTrick)).then((req) => {
+        updatedTrick).then((req) => {
             console.log("updated");
         });
 
