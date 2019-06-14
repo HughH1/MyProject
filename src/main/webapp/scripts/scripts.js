@@ -38,7 +38,7 @@ function search() {
 
     checkServer("GET", value, "http://35.234.153.117:8080/SkateTricks-1.0/api/viewTrickName").then((req) => {
         let tricks = JSON.parse(req.responseText);
-        
+        tricks = tricks[0]
         document.getElementById("trickName").innerHTML = tricks.trick;
         document.getElementById("trickDesc").innerHTML = tricks.desc;
         document.getElementById("trickProgress").innerHTML = tricks.progress;
@@ -58,18 +58,14 @@ function search() {
 function createTrick() {
     let createdTrick = {};
 
-    createdTrick
-        .trick = document.getElementById("cTrickName").value;
-    createdTrick
-        .desc = document.getElementById("cDesc").value;
-    createdTrick
-        .progress = document.getElementById("cProgress").value;
-    createdTrick
-        .difficulty = document.getElementById("cDifficulty").value;
+    createdTrick.trick = document.getElementById("cTrickName").value;
+    createdTrick.desc = document.getElementById("cDesc").value;
+    createdTrick.progress = document.getElementById("cProgress").value;
+    createdTrick.difficulty = document.getElementById("cDifficulty").value;
 
     JSON.stringify(createdTrick);
 
-    checkServer("POST", null, "http://35.234.153.117:8080/SkateTricks-1.0/api/createTrick", JSON.stringify(createdTrick)).then((req) => {
+    checkServer("POST", id, "http://35.234.153.117:8080/SkateTricks-1.0/api/createTrick", JSON.stringify(createdTrick)).then((req) => {
 
         console.log(createdTrick).catch((error) => console.log(error));
     });
