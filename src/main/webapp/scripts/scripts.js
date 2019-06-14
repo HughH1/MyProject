@@ -9,6 +9,7 @@ function checkServer(type, id, url, object) {
                 }
                 else {
                     reject("Something went wrong");
+                    
                 }
             }
         }
@@ -68,7 +69,7 @@ function createTrick() {
 
     checkServer("POST", null, "http://35.234.153.117:8080/SkateTricks-1.0/api/createTrick", JSON.stringify(createdTrick)).then((req) => {
         let theVal = "Trick has been created";
-        document.getElementById("deleteConfirmed").innerHTML = theVal;
+        document.getElementById("createConfirmed").innerHTML = theVal;
     });
 }
 
@@ -105,6 +106,8 @@ function updateTrick() {
 
         });
         
+        let theVal = "Trick has been updated";
+        document.getElementById("updatedConfirmed").innerHTML = theVal;
 
 }
 
