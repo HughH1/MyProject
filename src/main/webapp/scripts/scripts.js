@@ -64,7 +64,7 @@ function createTrick() {
     });
 }
 
-
+ 
 function updateTrick() {
     let id = myVal.value;
 
