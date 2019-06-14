@@ -12,7 +12,6 @@ function checkServer(type, id, url, object) {
                 }
             }
         }
-
         if (type === "POST") {
             req.open(type, url);
             req.setRequestHeader("Content-Type", "application/json");
@@ -60,8 +59,6 @@ function createTrick() {
     createdTrick
         .difficulty = document.getElementById("cDifficulty").value;
 
-
-
     JSON.stringify(createdTrick);
 
     checkServer("POST", null, "http://35.234.153.117:8080/SkateTricks-1.0/api/createTrick", JSON.stringify(createdTrick)).then((req) => {
@@ -71,13 +68,12 @@ function createTrick() {
     });
 }
 
-
 function updateTrick() {
     let id = myVal.value;
 
     let updatedTrick = {};
 
-    let currentTrick = document.getElementById("trickName").innerText;
+   let currentTrick = document.getElementById("trickName").innerText;
     let currentDesc = (document.getElementById("trickDesc")).innerText;
     let currentProgress = (document.getElementById("trickProgress")).innerText;
     let currentDifficulty = (document.getElementById("trickDifficulty")).innerText;
@@ -87,37 +83,12 @@ function updateTrick() {
     let newProgress = document.getElementById("uProgress").value;
     let newDifficulty = document.getElementById("uDifficulty").value;
 
-    if (newTrick != currentTrick && newTrick != "" && newTrick != undefined) {
-        updatedTrick.trick = newTrick;
-        console.log(updatedTrick);
-    } else {
-        updatedTrick.trick = currentTrick;
-        console.log(updatedTrick);
-    }
-
-    if (newDesc != currentDesc && newDesc != "" && newDesc != undefined) {
-        updatedTrick.desc = newDesc;
-        console.log(updatedTrick);
-    } else {
-        updatedTrick.desc = currentDesc;
-        console.log(updatedTrick);
-    }
-
-    if (newProgress != currentProgress && newProgress != "" && newProgress != undefined) {
-        updatedTrick.progress = newProgress
-        console.log(updatedTrick);
-    } else {
-        updatedTrick.progress = currentProgress
-        console.log(updatedTrick);
-    }
-
-    if (newDifficulty != currentDifficulty && newDifficulty != "" && newDifficulty != undefined) {
-        updatedTrick.difficulty = newDifficulty;
-        console.log(updatedTrick);
-    } else {
-        updatedTrick.difficulty = currentDifficulty;
-        console.log(updatedTrick);
-    }
+    const updatedTrick = {
+        trick: (newTrick && newTrick != currentTrick) ? newTrick : currentTrick,
+        desc: (newDesc && newDesc != currentDesc) ? newDesc : currentDesc,
+        progress: (newProgress && newProgress != currentProgress) ? newProgress : currentProgress,
+        difficulty: (newDifficulty && newDifficulty != currentDifficulty) ? newDifficulty : currentDifficulty,
+    };
 
     console.log(updatedTrick);
 
@@ -125,6 +96,4 @@ function updateTrick() {
         JSON.stringify(updatedTrick)).then((req) => {
             console.log("updated");
         });
-
 }
-
