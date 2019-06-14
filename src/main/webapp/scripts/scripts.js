@@ -95,4 +95,6 @@ function updateTrick() {
             console.log("updated");
         });
 
+        search();
+
    }
