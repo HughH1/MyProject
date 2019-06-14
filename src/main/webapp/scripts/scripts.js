@@ -37,6 +37,8 @@ function search() {
         document.getElementById("trickDesc").innerHTML = tricks.desc;
         document.getElementById("trickProgress").innerHTML = tricks.progress;
         document.getElementById("trickDifficulty").innerHTML = tricks.difficulty;
+
+        
     }).catch(error => {
         console.log(error);
     });
