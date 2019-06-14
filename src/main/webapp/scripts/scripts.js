@@ -85,11 +85,6 @@ function updateTrick() {
     let newProgress = document.getElementById("uProgress").value;
     let newDifficulty = document.getElementById("uDifficulty").value;
 
-
-    if(newTrick == null){
-        console.log("new trick is null!!");
-    }
-
     console.log(newTrick);
     console.log(newDesc);
     console.log(newProgress);
@@ -104,7 +99,7 @@ function updateTrick() {
 
     if (newDesc != currentDesc && newDesc != "" && newDesc != undefined) {
         updatedTrick.desc = newDesc;
-    } else if(newDesc != null) {
+    } else {
         updatedTrick.desc = currentDesc;
     }
 
