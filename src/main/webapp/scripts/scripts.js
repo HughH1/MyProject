@@ -96,25 +96,25 @@ function updateTrick() {
     console.log(newDifficulty);
 
 
-    if (newTrick != currentTrick && newTrick != null && newTrick != undefined) {
+    if (newTrick != currentTrick && newTrick != "" && newTrick != undefined) {
         updatedTrick.trick = newTrick;
     } else {
         updatedTrick.trick = currentTrick;
     }
 
-    if (newDesc != currentDesc && newDesc != null && newDesc != undefined) {
+    if (newDesc != currentDesc && newDesc != "" && newDesc != undefined) {
         updatedTrick.desc = newDesc;
     } else if(newDesc != null) {
         updatedTrick.desc = currentDesc;
     }
 
-    if (newProgress != currentProgress && newProgress != null && newProgress != undefined) {
+    if (newProgress != currentProgress && newProgress != "" && newProgress != undefined) {
         updatedTrick.progress = newProgress
     } else {
         updatedTrick.progress = currentProgress
     }
 
-    if (newDifficulty != currentDifficulty && newDifficulty != null && newDifficulty != undefined) {
+    if (newDifficulty != currentDifficulty && newDifficulty != "" && newDifficulty != undefined) {
         updatedTrick.difficulty = newDifficulty;
     } else {
         updatedTrick.difficulty = currentDifficulty;
