@@ -39,6 +39,7 @@ function search() {
     checkServer("GET", value, "http://35.234.153.117:8080/SkateTricks-1.0/api/viewTrickName").then((req) => {
         let tricks = JSON.parse(req.responseText);
         tricks = tricks[0]
+        sessionStorage.setItem("tricks", req.responseText);
         document.getElementById("trickName").innerHTML = tricks.trick;
         document.getElementById("trickDesc").innerHTML = tricks.desc;
         document.getElementById("trickProgress").innerHTML = tricks.progress;
@@ -105,8 +106,9 @@ function updateTrick() {
 }
 
 function deleteTrick() {
-    let id = myVal.value;
-    checkServer("DELETE", id, "http://35.234.153.117:8080/SkateTricks-1.0/api/delete").then((req) => {
+    let id = JSON.parse(sessionStorage.getItem("trick"));
+    id = id[0];
+    checkServer("DELETE", id.tId, "http://35.234.153.117:8080/SkateTricks-1.0/api/delete").then((req) => {
         console.log("Trick deleted!");
     });
 }
