@@ -1,6 +1,7 @@
 package com.qa.rest;
 
 import java.net.URI;
+import java.util.List;
 
 import javax.inject.Inject;
 import javax.ws.rs.Consumes;
@@ -18,6 +19,7 @@ import javax.ws.rs.core.UriInfo;
 import javax.ws.rs.core.Response.Status;
 
 import com.qa.model.Trick;
+import com.qa.model.TrickInterface;
 import com.qa.repository.TrickRepository;
 
 @Path("/")
@@ -30,7 +32,7 @@ public class TrickEndPoint {
 	@Consumes("application/json")
 	@Produces(MediaType.TEXT_PLAIN)
 	@Path("/createTrick")
-	public Response createTrick(Trick trick, @Context UriInfo uriInfo) {
+	public Response createTrick(TrickInterface trick, @Context UriInfo uriInfo) {
 		trick = trickRepository.createTrick(trick);
 		URI createdURI = uriInfo.getBaseUriBuilder().path("" + trick.getId()).build();
 		return Response.ok(createdURI.toString()).status(Status.CREATED).build();
@@ -40,8 +42,19 @@ public class TrickEndPoint {
 	@Path("/viewTrick/{id}")
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response getTrick(@PathParam("id") int id) {
-		Trick trick = trickRepository.findTrick(id);
+		TrickInterface trick = trickRepository.findTrick(id);
 		if (trick == null) {
+			return Response.status(Status.NOT_FOUND).build();
+		}
+		return Response.ok(trick).build();
+	}
+
+	@GET
+	@Path("/viewTrickName/{name}")
+	@Produces(MediaType.APPLICATION_JSON)
+	public Response getTrickName(@PathParam("name") String name) {
+		List<Trick> trick = trickRepository.findTrickName(name);
+		if (trick.size() == 0) {
 			return Response.status(Status.NOT_FOUND).build();
 		}
 		return Response.ok(trick).build();
@@ -50,11 +63,11 @@ public class TrickEndPoint {
 	@PUT
 	@Consumes("application/json")
 	@Path("/updateTrick/{id}")
-	public Response updateTrick(Trick trick, @PathParam("id") int id) {
+	public Response updateTrick(TrickInterface trick, @PathParam("id") int id) {
 		if (trickRepository.findTrick(id).equals(null)) {
 			return Response.status(Status.NOT_FOUND).build();
 		}
-		Trick newTrick = trickRepository.updateTrick(id, trick);
+		TrickInterface newTrick = trickRepository.updateTrick(id, trick);
 		return Response.ok(newTrick).build();
 
 	}

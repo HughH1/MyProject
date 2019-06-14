@@ -23,7 +23,6 @@ function checkServer(type, id, url, object) {
             req.send();
         }
         else {
-            console.log(object);
             req.open(type, url + "/" + id);
             req.setRequestHeader("Content-Type", "application/json");
             req.send(object);
@@ -34,9 +33,12 @@ function checkServer(type, id, url, object) {
 let myVal = document.getElementById("theInput");
 
 function search() {
+
     let value = myVal.value;
-    checkServer("GET", value, "http://35.234.153.117:8080/SkateTricks-1.0/api/viewTrick").then((req) => {
+
+    checkServer("GET", value, "http://35.234.153.117:8080/SkateTricks-1.0/api/viewTrickName").then((req) => {
         let tricks = JSON.parse(req.responseText);
+        
         document.getElementById("trickName").innerHTML = tricks.trick;
         document.getElementById("trickDesc").innerHTML = tricks.desc;
         document.getElementById("trickProgress").innerHTML = tricks.progress;
@@ -69,9 +71,12 @@ function createTrick() {
 
     checkServer("POST", null, "http://35.234.153.117:8080/SkateTricks-1.0/api/createTrick", JSON.stringify(createdTrick)).then((req) => {
 
-        console.log(createdTrick);
+        console.log(createdTrick).catch((error) => console.log(error));
     });
 }
+
+
+
 
 
 function updateTrick() {

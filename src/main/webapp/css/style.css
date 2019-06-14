@@ -6,14 +6,13 @@
 .hover head{
 color: blue;
 }
-body{
+body {
     color: aqua;
     margin: auto;
     width: 80%;
     padding-top: 1%;
     padding-left: 5%;
-    text-align: left;
-    background: #191919;
+    text-align: left;background: #191919;
 }
 
 p{
