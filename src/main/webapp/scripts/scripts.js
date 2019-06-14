@@ -111,6 +111,7 @@ function deleteTrick() {
     trickId = id[0];
     checkServer("DELETE", trickId.id, "http://35.234.153.117:8080/SkateTricks-1.0/api/delete").then((req) => {
         console.log("Trick deleted!");
-        document.getElementById("deleteConfirmed").innerText = "Trick " + trickId.id + "has been deleted";
+        let theVal = "Trick " + trickId.id + "has been deleted";
+        document.getElementById("deleteConfirmed").innerHTML.value = theVal;
     });
 }
