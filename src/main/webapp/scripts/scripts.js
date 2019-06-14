@@ -67,6 +67,7 @@ function createTrick() {
 
 function updateTrick() {
     let id = myVal.value;
+    console.log(id);
 
     let updatedTrick = {};
 
