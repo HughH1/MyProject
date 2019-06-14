@@ -103,7 +103,6 @@ function updateTrick() {
 
 }
 
-
 function deleteTrick() {
     let id = myVal.value;
     checkServer("DELETE", id, "http://35.234.153.117:8080/SkateTricks-1.0/api/delete").then((req) => {
