@@ -5,10 +5,10 @@ function search() {
         tricks = tricks[0]
         sessionStorage.setItem("tricks", req.responseText);
    
-            document.getElementById("trickName").innerHTML = tricks.trick;
-            document.getElementById("trickDesc").innerHTML = tricks.desc;
-            document.getElementById("trickProgress").innerHTML = tricks.progress;
-            document.getElementById("trickDifficulty").innerHTML = tricks.difficulty;
+            // document.getElementById("trickName").innerHTML = tricks.trick;
+            // document.getElementById("trickDesc").innerHTML = tricks.desc;
+            // document.getElementById("trickProgress").innerHTML = tricks.progress;
+            // document.getElementById("trickDifficulty").innerHTML = tricks.difficulty;
      
             // document.getElementById("uTrickName").value = tricks.trick;
             // document.getElementById("uTrickDesc").value = tricks.desc;
