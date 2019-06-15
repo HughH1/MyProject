@@ -29,7 +29,18 @@
             </nav>
         </header>
         <br>
-
+        <table id="trickTable" class="table table-hover">
+            <tr>
+                <td id="trickName">
+                </td>
+                <td id="trickDesc">
+                </td>
+                <td id="trickProgress">
+                </td>
+                <td id="trickDifficulty">
+                </td>
+            </tr>
+        </table>
 
         <label>Trick Delete</label>
         <input type="text" id="theInput" class="form-control" id="dTrickName" placeholder="Enter trick name">
@@ -38,8 +49,9 @@
 
         <!-- <input type="text" id="theInput" placeholder="type in a trick name"> -->
         <br>
-        
-        <button type="submit" id="deleteSubmit" onclick="deleteTrick()" class="btn btn-primary mb-2">Delete trick</button>
+
+        <button type="submit" id="deleteSubmit" onclick="deleteTrick()" class="btn btn-primary mb-2">Delete
+            trick</button>
 
         <script src="scripts/delete.js"></script>
         <script src="scripts/viewDelete.js"></script>
