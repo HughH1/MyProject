@@ -1,5 +1,6 @@
 function searchUpdate() {
     let value = myVal.value;
+    
     checkServer("GET", value, "http://35.234.153.117:8080/SkateTricks-1.0/api/viewTrickName").then((req) => {
         let tricks = JSON.parse(req.responseText);
         tricks = tricks[0]
@@ -10,10 +11,7 @@ function searchUpdate() {
         // document.getElementById("trickProgress").innerHTML = tricks.progress;
         // document.getElementById("trickDifficulty").innerHTML = tricks.difficulty;
 
-        console.log(tricks);
-        console.log(tricks.desc);
-        console.log(tricks.progress);
-        console.log(tricks.difficulty);
+       
         document.getElementById("uTrickName").value = tricks.trick;
         document.getElementById("uTrickDesc").value = tricks.desc;
         document.getElementById("uTrickProgress").value = tricks.progress;
@@ -23,4 +21,8 @@ function searchUpdate() {
 
 
     });
+    console.log(tricks);
+    console.log(tricks.desc);
+    console.log(tricks.progress);
+    console.log(tricks.difficulty);
 }
