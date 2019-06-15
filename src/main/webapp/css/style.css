@@ -23,6 +23,7 @@ button{
 
 
 p{
+    align-content: center;
     color: aqua;
 }
 h1{
@@ -30,8 +31,7 @@ h1{
     color : aqua;
 }
 div{
-    padding-left: 1%;
-    border: width 10em border-style solid aqua;
+    
     align-content: center;
 }
 li {
