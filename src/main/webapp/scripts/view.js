@@ -9,6 +9,11 @@ function search() {
         document.getElementById("trickProgress").innerHTML = tricks.progress;
         document.getElementById("trickDifficulty").innerHTML = tricks.difficulty;
 
+        document.getElementById("uTrickName").value = tricks.trick;
+        document.getElementById("uTrickDesc").value = tricks.desc;
+        document.getElementById("uTrickProgress").value = tricks.progress;
+        document.getElementById("uTrickDifficulty").value = tricks.difficulty;
+
     });
 }
 
