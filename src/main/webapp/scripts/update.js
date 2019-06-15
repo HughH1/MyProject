@@ -16,7 +16,7 @@ function updateTrick() {
     let currentTrick = tricks.trick;
     let currentDesc = tricks.desc;
     let currentProgress = tricks.progress;
-    let currentDifficulty = trick.difficulty;
+    let currentDifficulty = tricks.difficulty;
 
     let newTrick = document.getElementById("uTrickName").value;
     let newDesc = document.getElementById("uDesc").value;
