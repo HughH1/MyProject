@@ -13,9 +13,9 @@ function searchUpdate() {
 
        
         document.getElementById("uTrickName").value = tricks.trick;
-        document.getElementById("uTrickDesc").value = tricks.desc;
-        document.getElementById("uTrickProgress").value = tricks.progress;
-        document.getElementById("uTrickDifficulty").value = tricks.difficulty;
+        document.getElementById("uDesc").value = tricks.desc;
+        document.getElementById("uProgress").value = tricks.progress;
+        document.getElementById("uDifficulty").value = tricks.difficulty;
 
 
 
