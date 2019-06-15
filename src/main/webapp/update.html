@@ -1,22 +1,70 @@
 <DOCTYPE html>
     <html>
+    <title>
+        Edit Trick
+    </title>
 
     <head>
         <meta charset="UTF-8">
-     <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
     </head>
-    
+
     <body>
-            <input type="text" id="theInput" placeholder="type in a trick name">
-            <button type="submit" id="searchSubmit" onclick="search()" class="btn btn-primary mb-2">Submit</button>
+        <header>
+            <nav class="navbar navbar-dark bg-dark">
+                <li class="nav-item">
+                    <a class="nav-link" href="create.html">Create Trick</a>
+                </li>
+                <li>
+                    <a class="nav-link" href="view.html">View Tricks</a>
+                </li>
+                <li>
+                    <a class="nav-link" href="update.html">Edit Tricks</a>
+                </li>
+                <li>
+                    <a class="nav-link" href="delete.html">Delete Trick</a>
+                </li>
+            </nav>
+        </header>
+        <br>
+
+        <label>Retrive Trick</label>
+        <input type="text" id="theInput" class="form-control" id="sTrickName" placeholder="Enter trick name">
+        <br>
+        <button type="submit" id="searchSubmit" onclick="search()" class="btn btn-primary mb-2">Search</button>
+
+        <div>
+            <label>Trick Name</label>
+            <input type="text" class="form-control" id="uTrickName" placeholder="Update the trick name">
+            <label>Trick description</label>
+            <input type="text" class="form-control" id="uDesc" placeholder="Update the description of the trick">
+            <label>Trick progress</label>
+            <input type="number" class="form-control" id="uProgress"
+                placeholder="Update your new progress from 1 to 10">
+            <label>Trick difficulty</label>
+            <input type="number" class="form-control" id="uDifficulty" placeholder="Change the difficulty from 1 to 5">
             <br>
-            <input type="text" id="uTrickName" placeholder="update trick name here">
-            <input type="text" id="uDesc" placeholder="update description">
-            <input type="text" id="uProgress" placeholder="update progress">
-            <input type="text" id="uDifficulty" placeholder="update difficulty">
-            <button type="submit" id="updateSubmit" onclick="updateTrick()" class="btn btn-primary mb-2">Update trick</button>
-            <br>
-            <script src="scripts/update.js"></script>
-            <script src="scripts/scripts.js"></script>
+            <button type="submit" id="createSubmit" onclick="createTrick()" class="btn btn-primary mb-2">Update
+                Trick</button>
+        </div>
+
+
+        <!-- <input type="text" id="theInput" placeholder="type in a trick name">
+        <button type="submit" id="searchSubmit" onclick="search()" class="btn btn-primary mb-2">Submit</button>
+        <br>
+
+        <input type="text" id="uTrickName" placeholder="update trick name here">
+        <input type="text" id="uDesc" placeholder="update description">
+        <input type="text" id="uProgress" placeholder="update progress">
+        <input type="text" id="uDifficulty" placeholder="update difficulty">
+        <button type="submit" id="updateSubmit" onclick="updateTrick()"
+            class="btn btn-primary mb-2">Updatetrick</button>
+        <br> -->
+        <script src="scripts/update.js"></script>
+        <script src="scripts/view.js"></script>
+        <script src="scripts/scripts.js"></script>
     </body>
+
     </html>

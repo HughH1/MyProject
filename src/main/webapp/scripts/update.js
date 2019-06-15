@@ -1,11 +1,22 @@
 function updateTrick() {
     let id = JSON.parse(sessionStorage.getItem("tricks"));
     trickId = id[0];
+    let tricks = JSON.parse(req.responseText);
 
-    let currentTrick = document.getElementById("trickName").innerText;
-    let currentDesc = (document.getElementById("trickDesc")).innerText;
-    let currentProgress = (document.getElementById("trickProgress")).innerText;
-    let currentDifficulty = (document.getElementById("trickDifficulty")).innerText;
+    // let currentTrick = document.getElementById("trickName").innerText;
+    // let currentDesc = (document.getElementById("trickDesc")).innerText;
+    // let currentProgress = (document.getElementById("trickProgress")).innerText;
+    // let currentDifficulty = (document.getElementById("trickDifficulty")).innerText;
+
+    // document.getElementById("trickName").innerHTML = tricks.trick;
+    // document.getElementById("trickDesc").innerHTML = tricks.desc;
+    // document.getElementById("trickProgress").innerHTML = tricks.progress;
+    // document.getElementById("trickDifficulty").innerHTML = tricks.difficulty
+   
+    let currentTrick = tricks.trick;
+    let currentDesc = tricks.desc;
+    let currentProgress = tricks.progress;
+    let currentDifficulty = trick.difficulty;
 
     let newTrick = document.getElementById("uTrickName").value;
     let newDesc = document.getElementById("uDesc").value;

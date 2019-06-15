@@ -12,28 +12,58 @@ body {
     width: 80%;
     padding-top: 1%;
     padding-left: 5%;
-    text-align: left;background: #191919;
+    background: #121212;
 }
+
+button{
+ border-spacing: 10em;
+ padding-top: 5em; 
+}
+
+
 
 p{
     color: aqua;
 }
 h1{
-    text-align: left;
+    text-align: center;
     color : aqua;
 }
 div{
     padding-left: 1%;
     border: width 10em border-style solid aqua;
+    align-content: center;
 }
 li {
   display: block;
   color: aqua;
-  padding: 8px 16px;
+  padding: 8px 8px;
+
   text-decoration: none;
 }
 
 li:hover {
-  background-color: red;
-  color: white;
+  /* background-color: darkviolet;  */
+  color: lightseagreen;
+  
+  }
+
+  .form-control{
+      width: 60%;
+      align-items: center;
+  }
+
+  label{
+      padding-top: 1em;
+  }
+
+
+  td{
+      color: white;
+  }
+a{
+     border: .2em;
+    border-style: solid;
+    border-radius: 1em;
+    background: #191919;
 }
