@@ -7,4 +7,4 @@ function deleteTrick() {
     });
 }
 
-let myVal = document.getElementById("theInput");
+// let myVal = document.getElementById("theInput");

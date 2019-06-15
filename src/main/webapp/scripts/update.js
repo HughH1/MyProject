@@ -39,4 +39,4 @@ function updateTrick() {
     window.alert("Trick has been updated");
 }
 
-let myVal = document.getElementById("theInput");
+// let myVal = document.getElementById("theInput");
