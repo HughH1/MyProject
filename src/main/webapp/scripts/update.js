@@ -11,7 +11,7 @@ function updateTrick() {
     // document.getElementById("trickDifficulty").innerHTML = tricks.difficulty
     let id = JSON.parse(sessionStorage.getItem("tricks"));
     trickId = id[0];
-    // let tricks = JSON.parse(req.responseText);
+    let tricks = sessionStorage.getItem("tricks");
    
     let currentTrick = tricks.trick;
     let currentDesc = tricks.desc;
