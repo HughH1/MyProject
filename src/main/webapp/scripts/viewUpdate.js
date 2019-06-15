@@ -21,8 +21,4 @@ function searchUpdate() {
 
 
     });
-    console.log(tricks);
-    console.log(tricks.desc);
-    console.log(tricks.progress);
-    console.log(tricks.difficulty);
 }
