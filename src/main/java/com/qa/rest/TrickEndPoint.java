@@ -4,6 +4,7 @@ import java.net.URI;
 
 import javax.inject.Inject;
 import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
@@ -27,7 +28,7 @@ public class TrickEndPoint {
 
 	@POST
 	@Produces(MediaType.TEXT_PLAIN)
-	@Path("/trick")
+	@Path("/createTrick")
 	public Response createTrick(Trick trick, @Context UriInfo uriInfo) {
 		trick = trickRepository.createTrick(trick);
 		URI createdURI = uriInfo.getBaseUriBuilder().path("" + trick.getId()).build();
@@ -35,7 +36,7 @@ public class TrickEndPoint {
 	}
 
 	@GET
-	@Path("/trick/{id}")
+	@Path("/viewTrick/{id}")
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response getTrick(@PathParam("id") int id) {
 		if (trickRepository.findTrick(id).equals(null)) {
@@ -45,9 +46,10 @@ public class TrickEndPoint {
 		return Response.ok(trick).build();
 	}
 
+	
 	@PUT
 	@Consumes("application/json")
-	@Path("/trick/{id}")
+	@Path("/updateName/{trickName}")
 	public Response updateName(Trick name, @PathParam("id") int id) {
 		if (trickRepository.findTrick(id).equals(null)) {
 			return Response.status(Status.NOT_FOUND).build();
@@ -59,7 +61,7 @@ public class TrickEndPoint {
 
 	@PUT
 	@Consumes("application/json")
-	@Path("/trick/{id}")
+	@Path("/updateDesc/{id}")
 	public Response updateDesc(Trick desc, @PathParam("id") int id) {
 		if (trickRepository.findTrick(id).equals(null)) {
 			return Response.status(Status.NOT_FOUND).build();
@@ -70,7 +72,7 @@ public class TrickEndPoint {
 
 	@PUT
 	@Consumes("application/json")
-	@Path("/trick/{id}")
+	@Path("/updateProgress/{id}")
 	public Response updateProgress(Trick progress, @PathParam("id") int id) {
 		if (trickRepository.findTrick(id).equals(null)) {
 			return Response.status(Status.NOT_FOUND).build();
@@ -81,7 +83,7 @@ public class TrickEndPoint {
 
 	@PUT
 	@Consumes("application/json")
-	@Path("/trick/{id}")
+	@Path("/updateDifficulty/{id}")
 	public Response updateDifficulty(Trick difficulty, @PathParam("id") int id) {
 		if (trickRepository.findTrick(id).equals(null)) {
 			return Response.status(Status.NOT_FOUND).build();
@@ -90,6 +92,7 @@ public class TrickEndPoint {
 		return Response.ok(myTrick).build();
 	}
 
+	@DELETE
 	public Response deleteTrick(@PathParam("id") int id) {
 		if (trickRepository.findTrick(id).equals(null)) {
 			return Response.status(Status.NOT_FOUND).build();
