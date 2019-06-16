@@ -1,0 +1,63 @@
+<DOCTYPE html>
+    <html>
+    <title>
+        Delete Trick
+    </title>
+
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+    </head>
+
+    <body>
+        <header>
+            <nav class="navbar navbar-dark bg-dark">
+                <li class="nav-item">
+                    <a class="nav-link" href="create.html">Create Trick</a>
+                </li>
+                <li>
+                    <a class="nav-link" href="view.html">View Tricks</a>
+                </li>
+                <li>
+                    <a class="nav-link" href="update.html">Edit Tricks</a>
+                </li>
+                <li>
+                    <a class="nav-link nav-link2" href="delete.html">Delete Trick</a>
+                </li>
+            </nav>
+        </header>
+        <br>
+        <br>
+        <h4>Trick to be deleted</h4>
+        <table id="trickTable" class="table table-hover">
+            <tr>
+                <td id="trickName">
+                </td>
+                <td id="trickDesc">
+                </td>
+                <td id="trickProgress">
+                </td>
+                <td id="trickDifficulty">
+                </td>
+            </tr>
+        </table>
+
+        <label>Trick Delete</label>
+        <input type="text" id="theInput" class="form-control" id="dTrickName" placeholder="Enter trick name">
+        <br>
+        <button type="submit" id="searchSubmit" onclick="search()" class="btn btn-primary mb-2">Retrive trick</button>
+
+        <!-- <input type="text" id="theInput" placeholder="type in a trick name"> -->
+        <br>
+
+        <button type="submit" id="deleteSubmit" onclick="deleteTrick()" class="btn btn-primary mb-2">Delete
+            trick</button>
+
+        <script src="scripts/delete.js"></script>
+        <script src="scripts/viewDelete.js"></script>
+        <script src="scripts/scripts.js"></script>
+    </body>
+
+    </html>

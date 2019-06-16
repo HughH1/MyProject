@@ -1,5 +1,7 @@
 package com.qa.repository;
 
+import java.util.List;
+
 import com.qa.model.Trick;
   
 public interface TrickRepository { 
@@ -8,13 +10,9 @@ public interface TrickRepository {
 
 	public Trick findTrick(int id);
 
-	public Trick updateTrickName(int id, Trick name);
-
-	public Trick updateDesc(int id, Trick desc);
-
-	public Trick updateProgress(int id, Trick progress);
-
-	public Trick updateDifficulty(int id, Trick rating);
+	public List<Trick> findTrickName(String trick);
+	
+	public Trick updateTrick(int id, Trick trick);
 
 	public void deleteTrick(int id);
 
