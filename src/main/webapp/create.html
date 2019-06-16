@@ -1,0 +1,52 @@
+<DOCTYPE html>
+    <html>
+    <title>
+        Create Trick
+    </title>
+
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+    </head>
+
+    <body>
+        <header>
+            <nav class="navbar navbar-dark bg-dark">
+                <li class="nav-item">
+                    <a class="nav-link nav-link2" href="create.html">Create Trick</a>
+                </li>
+                <li>
+                    <a class="nav-link" href="view.html">View Tricks</a>
+                </li>
+                <li>
+                    <a class="nav-link" href="update.html">Edit Tricks</a>
+                </li>
+                <li>
+                    <a class="nav-link" href="delete.html">Delete Trick</a>
+                </li>
+            </nav>
+        </header>
+        <br>
+
+        <div>
+            <label>Trick Name</label>
+            <input type="text" class="form-control" id="cTrickName" placeholder="Enter trick name">
+            <label>Trick description</label>
+            <input type="text" class="form-control" id="cDesc" placeholder="Enter a description of the trick">
+            <label>Trick progress</label>
+            <input type="number" class="form-control" id="cProgress" placeholder="Enter your progress from 1 to 10">
+            <label>Trick difficulty</label>
+            <input type="number" class="form-control" id="cDifficulty"
+                placeholder="Enter set the difficulty from 1 to 5">
+            <br>
+            <button type="submit" id="createSubmit" onclick="createTrick()" class="btn btn-primary mb-2">Create
+                trick</button>
+        </div>
+
+        <script src="scripts/create.js"></script>
+        <script src="scripts/scripts.js"></script>
+    </body>
+
+    </html>
