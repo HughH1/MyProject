@@ -1,10 +1,10 @@
 
-function fetchData(id, url) {
+function checkServer(type, id, url, object) {
     return new Promise((resolve, reject) => {
         const req = new XMLHttpRequest();
         req.onreadystatechange = () => {
             if (req.readyState === 4) {
-                if (req.status === 200) {
+                if (req.status >= 200 && req.status < 300) {
                     resolve(req);
                 }
                 else {
@@ -12,59 +12,21 @@ function fetchData(id, url) {
                 }
             }
         }
-        req.open("GET", url+"/"+id);
-        console.log(id);
-        req.send();
+        if (type === "POST") {
+            req.open(type, url);
+            req.setRequestHeader("Content-Type", "application/json");
+            req.send(object);
+        } else if (type === "DELETE") {
+            req.open(type, url + "/" + id);
+            req.setRequestHeader("Content-Type", "application/json");
+            req.send();
+        }
+        else {
+            req.open(type, url + "/" + id);
+            req.setRequestHeader("Content-Type", "application/json");
+            req.send(object);
+        }
     });
 }
 
 let myVal = document.getElementById("theInput");
-
-
-function search() {
-    let value = myVal.value;
-    fetchData(value, "http://35.234.153.117:8080/SkateTricks-1.0/api/viewTrick").then((req) => {
-        let tricks = JSON.parse(req.responseText);
-        document.getElementById("myOutput").innerHTML = tricks.difficulty;
-        console.log(tricks);
-    });
-}
-
-
-
-
-// function sendReq() {
-//     fetchData("localhost:8080/SkateTricks-1.0/api/viewTrick/").then((req) => {
-//         let tricks = JSON.parse(req.responseText);
-//         console.log(tricks);
-
-
-//     });
-// }
-
-
-
-
-
-
-
-
-
-
-// function sendReq() {
-//     const req = new XMLHttpRequest();
-//     req.onreadystatechange = function myRequest() {
-//         if (req.readyState === 4) {
-//             let superHeroObject = JSON.parse(req.responseText);
-//             for (let x in superHeroObject) {
-//                 let paste = document.createElement("th");
-//                 paste.innerText = x;
-//                 document.getElementById("heading").appendChild(paste);
-//               
-//             }
-//         }
-//     }
-//     req.open("GET", "https://raw.githubusercontent.com/ewomackQA/JSONDataRepo/master/example.json");
-//     req.send();
-
-// }
