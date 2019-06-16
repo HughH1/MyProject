@@ -4,6 +4,9 @@ import static org.junit.Assert.assertEquals;
 
 import java.util.concurrent.TimeUnit;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.FixMethodOrder;
@@ -15,8 +18,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
-import org.junit.runners.MethodSorters;
 
+import com.qa.model.Trick;
+import com.qa.repository.TrickDB;
+
+import org.junit.runners.MethodSorters;
 
 public class CrudTesting {
 
@@ -52,12 +58,12 @@ public class CrudTesting {
 	public void read() throws InterruptedException {
 		driver.get("http://35.234.153.117:8080/SkateTricks-1.0/view.html");
 		ViewPage viewPage = PageFactory.initElements(driver, ViewPage.class);
-		viewPage.searchTrick("kickflip");
+		viewPage.searchTrick("shuvit");
 		Thread.sleep(100);
 		action.moveToElement(driver.findElement(By.xpath("//*[@id=\"searchSubmit\"]"))).click().perform();
 		driver.manage().timeouts().implicitlyWait(1L, TimeUnit.SECONDS);
 		String result = viewPage.getTrick();
-		assertEquals("View test failed", "kickflip", result);
+		assertEquals("View test failed", "shuvit", result);
 	}
 
 	@Test
@@ -74,13 +80,12 @@ public class CrudTesting {
 		String confirmed = driver.switchTo().alert().getText();
 		assertEquals("Update test failed", "Trick has been updated", confirmed);
 	}
-	
-	
+
 	@Test
 	public void delete() throws InterruptedException {
 		driver.get("http://35.234.153.117:8080/SkateTricks-1.0/delete.html");
 		DeletePage deletePage = PageFactory.initElements(driver, DeletePage.class);
-		deletePage.searchTrick("kickflip");
+		deletePage.searchTrick("nollie");
 		Thread.sleep(100);
 		action.moveToElement(driver.findElement(By.xpath("//*[@id=\"searchSubmit\"]"))).click().perform();
 		driver.manage().timeouts().implicitlyWait(1L, TimeUnit.SECONDS);

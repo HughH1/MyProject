@@ -20,7 +20,7 @@ public class TrickDB implements TrickRepository {
 	public Trick createTrick(Trick trick) {
 		em.persist(trick);
 		return trick;
-	}
+	} 
 
 	public Trick findTrick(int id) {
 		Trick trick = em.find(Trick.class, id);
