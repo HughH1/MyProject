@@ -1,7 +1,10 @@
 package com.qa.repository;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
 import javax.transaction.Transactional;
 import javax.transaction.Transactional.TxType;
 
@@ -19,10 +22,15 @@ public class TrickDB implements TrickRepository {
 		return trick;
 	}
 
-	@Transactional(value = TxType.REQUIRED)
 	public Trick findTrick(int id) {
 		Trick trick = em.find(Trick.class, id);
 		return trick;
+	}
+
+	public List<Trick> findTrickName(String trickName) {
+		TypedQuery<Trick> query = em.createQuery("Select tri from Trick tri where trick= '" + trickName + "'", Trick.class);
+		List<Trick> list = query.getResultList();
+		return list;
 	}
 
 	@Transactional(value = TxType.REQUIRED)

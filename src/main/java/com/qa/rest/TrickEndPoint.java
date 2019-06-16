@@ -1,6 +1,7 @@
 package com.qa.rest;
 
 import java.net.URI;
+import java.util.List;
 
 import javax.inject.Inject;
 import javax.ws.rs.Consumes;
@@ -42,6 +43,17 @@ public class TrickEndPoint {
 	public Response getTrick(@PathParam("id") int id) {
 		Trick trick = trickRepository.findTrick(id);
 		if (trick == null) {
+			return Response.status(Status.NOT_FOUND).build();
+		}
+		return Response.ok(trick).build();
+	}
+
+	@GET
+	@Path("/viewTrickName/{name}")
+	@Produces(MediaType.APPLICATION_JSON)
+	public Response getTrickName(@PathParam("name") String name) {
+		List<Trick> trick = trickRepository.findTrickName(name);
+		if (trick.size() == 0) {
 			return Response.status(Status.NOT_FOUND).build();
 		}
 		return Response.ok(trick).build();
