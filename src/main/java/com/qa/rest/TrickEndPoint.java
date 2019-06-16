@@ -49,47 +49,14 @@ public class TrickEndPoint {
 
 	@PUT
 	@Consumes("application/json")
-	@Path("/updateName/{id}")
-	public Response updateName(Trick name, @PathParam("id") int id) {
+	@Path("/updateTrick/{id}")
+	public Response updateTrick(Trick trick, @PathParam("id") int id) {
 		if (trickRepository.findTrick(id).equals(null)) {
 			return Response.status(Status.NOT_FOUND).build();
 		}
-		Trick myTrick = trickRepository.updateTrickName(id, name);
-		return Response.ok(myTrick).build();
+		Trick newTrick = trickRepository.updateTrick(id, trick);
+		return Response.ok(newTrick).build();
 
-	}
-
-	@PUT
-	@Consumes("application/json")
-	@Path("/updateDesc/{id}")
-	public Response updateDesc(Trick desc, @PathParam("id") int id) {
-		if (trickRepository.findTrick(id).equals(null)) {
-			return Response.status(Status.NOT_FOUND).build();
-		}
-		Trick myTrick = trickRepository.updateDesc(id, desc);
-		return Response.ok(myTrick).build();
-	}
-
-	@PUT
-	@Consumes("application/json")
-	@Path("/updateProgress/{id}")
-	public Response updateProgress(Trick progress, @PathParam("id") int id) {
-		if (trickRepository.findTrick(id).equals(null)) {
-			return Response.status(Status.NOT_FOUND).build();
-		}
-		Trick myTrick = trickRepository.updateProgress(id, progress);
-		return Response.ok(myTrick).build();
-	}
-
-	@PUT
-	@Consumes("application/json")
-	@Path("/updateDifficulty/{id}")
-	public Response updateDifficulty(Trick difficulty, @PathParam("id") int id) {
-		if (trickRepository.findTrick(id).equals(null)) {
-			return Response.status(Status.NOT_FOUND).build();
-		}
-		Trick myTrick = trickRepository.updateDifficulty(id, difficulty);
-		return Response.ok(myTrick).build();
 	}
 
 	@DELETE
