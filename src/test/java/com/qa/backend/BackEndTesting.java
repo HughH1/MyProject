@@ -1,5 +1,13 @@
 package com.qa.backend;
 
-public class BackEndTesting {
+import org.junit.Test;
 
+public class BackEndTesting {
+	
+	@Test
+	public void test1(){
+		
+	}
+	
+	
 }
