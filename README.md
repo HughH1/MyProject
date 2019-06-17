@@ -9,7 +9,7 @@ after searching for it by name and deleting said trick again by searching for
 the trick. For the creation of the website I used HTML, CSS (bootstrap) and vanilla
 JavaScript. 
 
-#####What goes on
+###What goes on
 For the data to be sent/retrieved/updated/deleted to the
 database, it is first converted to a JSON string then a connection to the JDBC
 is opened and the data is sent, with the help of the HTTP request methods in RESTful
@@ -34,7 +34,7 @@ that doesn't need a transactional is the for viewing is nothing is being
 changed. 
 
 
-####How to setup
+###### How to setup
 
 To setup my project you will need to download and install
 the following. 
@@ -43,7 +43,7 @@ the following.
 3. H2 Database      
 
 
-######Maven
+###### Maven
 Starting with maven. In your command terminal (for Windows
 users in your file explorer) locate your project into your project at the top
 level (Window users in file explorer type in cmd into the directory bar) and type
@@ -52,7 +52,7 @@ that your project requires using Maven along with building the war file. All
 the project's dependencies are located inside the pom.xml file. 
 
 
-######H2 Database
+###### H2 Database
 Now you will need to run the H2 database. In your terminal (or
 file explorer) navigate to the H2 directory, then to, /bin inside there (Window
 users in file explorer open the terminal now) you will need to type in the command
@@ -60,7 +60,7 @@ users in file explorer open the terminal now) you will need to type in the comma
 have. **Don't** close the window that pops up. 
 
 
-######Wildfly
+###### Wildfly
 Navigate to the top project directory then to /target/SkateTricks-1.0.war
 copy the file war file then navigate to the Wildfly/standalone/deployments/
 then paste in the war file. Navigate back to the top-level directory then go to
@@ -70,7 +70,7 @@ running, open your browser of choice and in the URL type in "localhost:8082"
 and you should be able to configure and view your database from there.
 
 
-######Expansion  
+###### Expansion  
 Now you have the project set up you can add additional entities
 in the source src/main/java folder, model package and create new class. Still
 in the src/main/java folder there are two more packages you will need to add to,
@@ -78,7 +78,3 @@ these are repository and rest. Repository package contains the DB class and
 Repository interface you will need to add for a new entity. Finally, you will
 need to add in another endpoint class which is where the URI is directed to. Now
 you can expand open my project.
-
-
-
-
