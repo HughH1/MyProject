@@ -11,15 +11,19 @@ body {
     width: 80%;
     padding-top: 1%;
     padding-left: 5%;
+    background-image: url("images/skatboard1.png");
     background: #121212;
+}
+
+img{
+    width: 100%;
+  height: auto;
 }
 
 button{
  border-spacing: 10em;
  padding-top: 5em; 
 }
-
-
 
 p{
     align-content: center;
