@@ -9,7 +9,7 @@ after searching for it by name and deleting said trick again by searching for
 the trick. For the creation of the website I used HTML, CSS (bootstrap) and vanilla
 JavaScript. 
 
-###What goes on
+### What goes on
 For the data to be sent/retrieved/updated/deleted to the
 database, it is first converted to a JSON string then a connection to the JDBC
 is opened and the data is sent, with the help of the HTTP request methods in RESTful
@@ -42,7 +42,7 @@ the following.
 3. H2 Database      
 
 
-### Maven
+#### Maven
 Starting with maven. In your command terminal (for Windows
 users in your file explorer) locate your project into your project at the top
 level (Window users in file explorer type in cmd into the directory bar) and type
@@ -51,7 +51,7 @@ that your project requires using Maven along with building the war file. All
 the project's dependencies are located inside the pom.xml file. 
 
 
-### H2 Database
+#### H2 Database
 Now you will need to run the H2 database. In your terminal (or
 file explorer) navigate to the H2 directory, then to, /bin inside there (Window
 users in file explorer open the terminal now) you will need to type in the command
@@ -59,7 +59,7 @@ users in file explorer open the terminal now) you will need to type in the comma
 have. **Don't** close the window that pops up. 
 
 
-### Wildfly
+#### Wildfly
 Navigate to the top project directory then to /target/SkateTricks-1.0.war
 copy the file war file then navigate to the Wildfly/standalone/deployments/
 then paste in the war file. Navigate back to the top-level directory then go to
